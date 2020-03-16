@@ -1,0 +1,57 @@
+﻿<Window x:Class="PAzIGProj.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PAzIGProj.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid Margin="60">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="0,0,0,20" Orientation="Horizontal">
+            <TextBox Width="300px" Grid.Row="0" Text="{Binding TwoWayTest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Grid.Row="0" Text="{Binding TwoWayTest, Mode=OneWay}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListView Name="lvProducts" ItemsSource="{Binding Products}" Grid.Row="0" Grid.RowSpan="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--Binding bezpośrednio do innej kontrolki - zarządzanie wyświetlaniem ceny odbywa się tylko w tym miejscu - nie przechodzi przez ViewModel-->
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="20,0,0,0" Orientation="Horizontal">
+                <TextBlock Grid.Row="0"  Text="Cena: "/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ElementName=lvProducts, Path=SelectedItem.Price}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,0,0,0" Orientation="Vertical">
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Grid.Row="0"  Text="Nazwa: " VerticalAlignment="Top" Height="20px"/>
+                    <TextBox Text="{Binding NewProductName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Width="200px" VerticalAlignment="Top" Height="20px" />
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Grid.Row="0"  Text="Cena: " VerticalAlignment="Top" Height="20px"/>
+                    <TextBox Text="{Binding NewProductPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Width="200px" VerticalAlignment="Top" Height="20px" />
+                </StackPanel>
+                <Button Command="{Binding AddProductCommand}">Dodaj</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

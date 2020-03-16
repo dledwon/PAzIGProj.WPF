@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAzIGProj.WPF", "PAzIGProj.WPF\PAzIGProj.WPF.csproj", "{9838ADAC-A19C-4B82-8B98-9904384D7A2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAzIGProj", "PAzIGProj\PAzIGProj.csproj", "{1678138A-87A4-4B67-968D-53025C3F6018}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9838ADAC-A19C-4B82-8B98-9904384D7A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9838ADAC-A19C-4B82-8B98-9904384D7A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9838ADAC-A19C-4B82-8B98-9904384D7A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9838ADAC-A19C-4B82-8B98-9904384D7A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1678138A-87A4-4B67-968D-53025C3F6018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1678138A-87A4-4B67-968D-53025C3F6018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1678138A-87A4-4B67-968D-53025C3F6018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1678138A-87A4-4B67-968D-53025C3F6018}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E03D4EAA-E68C-429B-B88D-DB709FE9BBC9}
+	EndGlobalSection
+EndGlobal
